@@ -1,8 +1,18 @@
 # frozen_string_literal: true
 
-require_relative "ratchet/version"
+require "active_support"
+# Provides String#pluralize, ends_with?, and others
+require "active_support/core_ext/string"
 
 module Ratchet
-  class Error < StandardError; end
-  # Your code goes here...
+  extend ActiveSupport::Autoload
+
+  # public API
+  # ...
+
+  # private API
+  autoload :ConstantDiscovery
+  autoload :ConstantContext
 end
+
+require "ratchet/version"
