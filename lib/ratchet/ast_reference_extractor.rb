@@ -2,7 +2,7 @@
 
 module Ratchet
   # Extracts a possible constant reference from a given AST node.
-  class ReferenceExtractor
+  class AstReferenceExtractor
     class << self
       def get_fully_qualified_references_from(unresolved_references, context_provider)
         fully_qualified_references = []
@@ -80,5 +80,5 @@ module Ratchet
     end
   end
 
-  private_constant :ReferenceExtractor
+  private_constant :AstReferenceExtractor
 end

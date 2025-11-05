@@ -4,7 +4,7 @@ require "test_helper"
 require "support/ratchet/parser_test_helper"
 
 module Ratchet
-  class ReferenceExtractorTest < Minitest::Test
+  class AstReferenceExtractorTest < Minitest::Test
     include RailsApplicationFixtureHelper
 
     def setup
@@ -223,7 +223,7 @@ module Ratchet
       root_node = ParserTestHelper.parse(code)
       file_path = to_app_path(file_path)
 
-      extractor = ReferenceExtractor.new(
+      extractor = AstReferenceExtractor.new(
         constant_name_inspectors: constant_name_inspectors,
         root_node: root_node,
         root_path: app_dir
@@ -236,7 +236,7 @@ module Ratchet
         file_path: Pathname.new(file_path).relative_path_from(app_dir).to_s
       )
 
-      ReferenceExtractor.get_fully_qualified_references_from(
+      AstReferenceExtractor.get_fully_qualified_references_from(
         unresolved_references,
         @context_provider
       )

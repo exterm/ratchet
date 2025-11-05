@@ -121,7 +121,7 @@ module Ratchet
         ["class ::MyClass; end", "::MyClass"],
         ["class My::Class; end", "My::Class"],
         ["My::Class = Class.new", "My::Class"],
-        ["My::Class = Class.new do end", "My::Class"],
+        ["My::Class = Class.new do end", "My::Class"]
       ].each do |class_definition, name|
         node = parse(class_definition)
         assert_equal name, NodeHelpers.module_name_from_definition(node)
@@ -134,7 +134,7 @@ module Ratchet
         ["module ::MyModule; end", "::MyModule"],
         ["module My::Module; end", "My::Module"],
         ["My::Module = Module.new", "My::Module"],
-        ["My::Module = Module.new do end", "My::Module"],
+        ["My::Module = Module.new do end", "My::Module"]
       ].each do |module_definition, name|
         node = parse(module_definition)
         assert_equal name, NodeHelpers.module_name_from_definition(node)
@@ -150,7 +150,7 @@ module Ratchet
         "-> x { x * 2 }",
         "Class.new",
         "Class.new do end",
-        "MyConstant = -> {}",
+        "MyConstant = -> {}"
       ].each do |module_definition|
         node = parse(module_definition)
         assert_nil NodeHelpers.module_name_from_definition(node)
