@@ -4,6 +4,8 @@ PATH
     ratchet (0.1.0)
       activesupport
       herb
+      parser
+      prism (>= 1.4.0)
       zeitwerk
 
 GEM

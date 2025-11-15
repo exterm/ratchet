@@ -36,6 +36,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency "zeitwerk"
   spec.add_dependency "activesupport"
   spec.add_dependency "herb"
+  spec.add_dependency "parser"
+  spec.add_dependency "prism", ">= 1.4.0" # for Prism::Translation::Parser::Builder
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html

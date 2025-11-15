@@ -13,7 +13,7 @@ module Ratchet
         end
       end
 
-      class TolerateInvalidUtf8Builder < Parser::Builders::Default
+      class TolerateInvalidUtf8Builder < Prism::Translation::Parser::Builder
         def string_value(token)
           value(token)
         end

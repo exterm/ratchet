@@ -34,6 +34,13 @@ Relevant open PRs on packwerk:
 - Removed dependency on `constant_resolver` by depending directly on zeitwerk for reverse lookup, thanks to @Catsuko ([packwerk#410](https://github.com/Shopify/packwerk/pull/410))
 - Replaced `better_html` with `herb` which comes with a lot less dependencies
 - remove possibly outdated encoding handling from parsers
+- fixed prism deprecation warnings, thanks to @Earlopain ([packwerk#431](https://github.com/Shopify/packwerk/pull/431))
+
+## TO DO
+
+- Ratchet::Extractor#references_from_file should ignore references to the same file (e.g. `class A; end` in `a.rb` should not yield a reference)
+- add association inspector from Packwerk
+- rename the whole thing to ReferenceExtractor / reference_extractor
 
 ## Ideas
 
@@ -48,8 +55,7 @@ Relevant open PRs on packwerk:
   - instead of reading from `Rails.autoloaders`, can we just get the autoloaders from Zeitwerk?
 - cleanups
   - pass filenames and paths around as Pathname objects, not strings
-- features
-  - add association inspector from Packwerk
+  - introduce an Internal namespace
 
 ## Default Gem README
 
